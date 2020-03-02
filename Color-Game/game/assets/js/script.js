@@ -224,7 +224,7 @@ function showTime() {
 
 function calcScore() {
 
-	score = ( Tpoint / ( Fpoint + 1 ) ) * finalTimeS;
+	score = ( Tpoint / ( Fpoint + 1 ) ) * finalTime;
 
 	
 }
