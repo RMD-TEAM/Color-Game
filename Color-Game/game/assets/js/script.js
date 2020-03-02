@@ -244,4 +244,3 @@ function showTime() {
 	document.getElementById("playingTime").innerHTML = `${endTime} seconds!`;
 
 }
-
