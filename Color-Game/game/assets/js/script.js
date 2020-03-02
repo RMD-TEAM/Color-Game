@@ -11,6 +11,8 @@ let time = 0;			// game time
 let endTime;
 let timer;
 let timerId;
+let startTime;
+let endTimeTime;
 let health = 100;
 
 
@@ -96,6 +98,7 @@ function gameStart() {
 	document.getElementById("gameMenu").style.display = "none";
 	healthBar();
 	timerBar();
+	startTime = getTime();
 }
 
 // get color by click on button
@@ -241,6 +244,6 @@ function clickEvent(id) {
 
 function showTime() {
 
-	document.getElementById("playingTime").innerHTML = `${endTime} seconds!`;
+	document.getElementById("playingTime").innerHTML = `${startTime} seconds!`;
 
 }
