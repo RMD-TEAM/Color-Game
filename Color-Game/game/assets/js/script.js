@@ -90,7 +90,6 @@ function defeat() {
 
 function gameStart() {
 	health = 100;
-	healthDelta = 0;
 	time = 0;
 	isGame = true;
 	changeColor();
@@ -226,7 +225,7 @@ function clickEvent(id) {
 
 			Tpoint++;
 			changeColor();
-			healthDelta -= 4;
+			health += 4;
 
 		} else {
 			

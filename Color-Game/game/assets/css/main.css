@@ -188,9 +188,9 @@ margin and padding */
 	border-radius: 100%;
 }
 
-#color_blue, #color_violet, #color_cyan,
+(#color_blue, #color_violet, #color_cyan,
  #color_red, #color_yellow, #color_orange,
- #color_brown, #color_pink, #color_green:active {
+ #color_brown, #color_pink, #color_green):active {
 	
 	border: solid 1px black;
 	position: relative;
