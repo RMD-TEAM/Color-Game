@@ -210,3 +210,9 @@ margin and padding */
 	opacity: 1;
 
  }
+
+ #scoreBoard {
+ 	background-color: white;
+ 	position: relative;
+ }
+

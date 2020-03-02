@@ -6,15 +6,15 @@ let value; // random number
 let isGame = false; // game status
 let Tpoint; // number of correct clicks
 let Fpoint; // number of wrong clocks
-let allScore; // final score
+let score = 0; // final score
 let time = 0; // game time
 let endTime;
 let timer;
 let timerId;
 let startTime;
-let endTime;
-let finaTime;
+let finalTime;
 let health = 100;
+let finalTimeS;
 
 // timer. Have tick every 1 ms
 
@@ -44,12 +44,6 @@ function healthBar() {
   }
 }
 
-// correcting time of play
-
-function setTime() {
-  endTime = Math.round(time / 100) / 10;
-}
-
 // defeat conditions
 
 function defeat() {
@@ -57,15 +51,24 @@ function defeat() {
     isGame = false;
 
     if (isGame == false) {
-      setTime();
 
       document.getElementById("gameMenu").style.display = "block";
 
       clearInterval(timerId);
+
       endTime = Date.now();
-      finaTime = endTime - startTime;
+
+      finalTime = endTime - startTime;
+
+      finalTimeS = ( Math.round( finalTime / 10 ) / 100 );
+
+      calcScore();
 
       showTime();
+
+      setScore();
+
+      health++;
     }
   }
 }
@@ -208,5 +211,23 @@ function clickEvent(id) {
 // show time
 
 function showTime() {
-  document.getElementById("playingTime").innerHTML = `${finaTime} seconds!`;
+
+  document.getElementById("playingTime").innerHTML = `${finalTimeS} seconds!`;
+
+}
+
+// calculating score
+
+function calcScore() {
+
+	score = ( Tpoint / ( Fpoint + 1 ) ) * finalTimeS;
+
+	
+}
+
+function setScore() {
+
+	document.getElementById("scoreBoard").innerHTML = `${score} points!`;
+
+
 }
