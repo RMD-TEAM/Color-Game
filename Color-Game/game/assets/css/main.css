@@ -168,6 +168,9 @@ margin and padding */
 	text-align: center;
 	font-size: 16px;
 	z-index: 200;
+}
 
-
+#playingTime {
+	position: relative;
+	background-color: white
 }

@@ -8,7 +8,6 @@ let Tpoint;				// number of correct clicks
 let Fpoint;				// number of wrong clocks
 let allScore;			// final score
 let time = 0;			// game time
-let startTime;
 let endTime;
 let timer;
 let timerId;
@@ -57,6 +56,15 @@ function healthBar() {
 
 }
 
+// correcting time of play
+
+function setTime() {
+
+	endTime = Math.round((time / 100)) / 10; 
+
+}
+
+
 // defeat conditions
 
 function defeat() {
@@ -67,9 +75,13 @@ function defeat() {
 
 		if (isGame == false) {
 
+			setTime();
+
 			document.getElementById("gameMenu").style.display = "block";
 
 			clearInterval(timerId);
+
+			showTime();
 
 		}
 		
@@ -81,6 +93,8 @@ function defeat() {
 
 function gameStart() {
 	health = 100;
+	healthDelta = 0;
+	time = 0;
 	isGame = true;
 	changeColor();
 	document.getElementById("gameMenu").style.display = "none";
@@ -224,6 +238,14 @@ function clickEvent(id) {
 		}
 
 	}
+
+}
+
+// show time
+
+function showTime() {
+
+	document.getElementById("playingTime").innerHTML = `${endTime} seconds!`;
 
 }
 
