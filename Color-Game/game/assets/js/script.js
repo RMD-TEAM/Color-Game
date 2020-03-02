@@ -12,7 +12,8 @@ let endTime;
 let timer;
 let timerId;
 let startTime;
-let endTimeTime;
+let endTime;
+let finaTime;
 let health = 100;
 
 // timer. Have tick every 1 ms
@@ -61,6 +62,8 @@ function defeat() {
       document.getElementById("gameMenu").style.display = "block";
 
       clearInterval(timerId);
+      endTime = Date.now();
+      finaTime = endTime - startTime;
 
       showTime();
     }
@@ -77,9 +80,10 @@ function gameStart() {
   document.getElementById("gameMenu").style.display = "none";
   healthBar();
   timerBar();
-  startTime = new getTime();
-}
-
+  startTime = Date.now();
+  
+  //startTime = startTime1.getTime()
+  }
 // get color by click on button
 
 function getColor(id) {
@@ -204,5 +208,5 @@ function clickEvent(id) {
 // show time
 
 function showTime() {
-  document.getElementById("playingTime").innerHTML = `${startTime} seconds!`;
+  document.getElementById("playingTime").innerHTML = `${finaTime} seconds!`;
 }
