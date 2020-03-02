@@ -11,7 +11,6 @@ let time = 0;			// game time
 let endTime;
 let timer;
 let timerId;
-let healthDelta = 0;
 let health = 100;
 
 
@@ -42,9 +41,7 @@ function timerBar() {
 
 function healthBar() {
 
-	healthDelta += 0.002;
-
-	health = 100 - healthDelta;
+	health -= 0.002;
 
 	document.getElementById("timeline").style.width = `${health}%`;
 
