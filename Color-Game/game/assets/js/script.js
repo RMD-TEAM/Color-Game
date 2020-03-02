@@ -4,8 +4,8 @@ let chosenColor; // color chosen by user
 let screenColor; // color chosen by game
 let value; // random number
 let isGame = false; // game status
-let Tpoint; // number of correct clicks
-let Fpoint; // number of wrong clocks
+let Tpoint = 0; // number of correct clicks
+let Fpoint = 0; // number of wrong clocks
 let score = 0; // final score
 let time = 0; // game time
 let endTime;
@@ -69,6 +69,10 @@ function defeat() {
       setScore();
 
       health++;
+
+      Tpoint = 0;
+
+      Fpoint = 0;
     }
   }
 }
